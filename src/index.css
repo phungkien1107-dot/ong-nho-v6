@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  /* Ánh sáng quét nhẹ qua nút Kiểm tra ngay mỗi vài giây */
+  @keyframes buttonShimmer {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.6;
+    }
+    30% {
+      transform: translateX(250%) skewX(-20deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(250%) skewX(-20deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.25s ease-out forwards;
+  }
+
+  .animate-button-shimmer {
+    animation: buttonShimmer 4s ease-in-out infinite;
+  }
+
+  /* Skeleton shimmer cho khối chờ */
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 243, 196, 0.45) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.8s infinite;
+  }
+}
+
+/* Thẻ nhấc nhẹ khi rê chuột (chỉ trên máy tính / thiết bị hỗ trợ hover) */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px -4px rgba(43, 27, 14, 0.08);
+  }
+}
+
+/* Tự giảm hiệu ứng khi thiết bị bật prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

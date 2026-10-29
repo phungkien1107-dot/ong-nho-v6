@@ -1,0 +1,14 @@
+ONG NHO - KIEM TRA WEBSITE (chay tren may tinh)
+
+1. Cai Node.js ban LTS (mot lan): https://nodejs.org
+2. Giai nen thu muc nay, bam dup file  chay-app.bat
+   (lan dau mat 1-2 phut de cai dat)
+3. Trinh duyet tu mo http://localhost:3000. Dong cua so den de tat app.
+
+Dien thoai cung wifi: mo http://<IP-may-tinh>:3000
+
+LUU Y
+- File .env chua khoa OpenAI cua ban. KHONG gui file nay cho nguoi khac
+  va KHONG dua len GitHub.
+- Muc Thong ke Google can dia chi cong khai de khach cap quyen,
+  chay tren may tinh thi khach khong bam duoc.

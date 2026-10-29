@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ong-nho-app
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: GOOGLE_CLIENT_ID
+        value: 496719239963-lqv5lrr1sqji65emg191bg9e9rmpmukc.apps.googleusercontent.com
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: APP_URL
+        sync: false

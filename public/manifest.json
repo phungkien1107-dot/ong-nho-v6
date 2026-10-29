@@ -1,0 +1,17 @@
+{
+  "name": "Ong Nhỏ – Kiểm tra website",
+  "short_name": "Ong Nhỏ",
+  "description": "Công cụ kiểm tra và chấm điểm website dễ hiểu cho chủ doanh nghiệp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFBF0",
+  "theme_color": "#FFB400",
+  "icons": [
+    {
+      "src": "/bee-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
